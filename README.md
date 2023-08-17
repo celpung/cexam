@@ -1,66 +1,68 @@
 # cexam
 
+### Aplikasi ini masih dalam tahap pengembangan!
+
 ![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-Welcome to the cexam repository! This project is designed to streamline the process of conducting and managing exams. It features a robust backend built with Go (Golang) and a dynamic frontend powered by Next.js.
+Selamat datang di repositori cexam! Proyek ini dirancang untuk menyederhanakan proses pelaksanaan dan pengelolaan ujian. Proyek ini memiliki backend tangguh yang dibangun dengan Go (Golang) dan frontend dinamis yang didukung oleh Next.js.
 
-## Table of Contents
+## Daftar Isi
 
-- [Introduction](#introduction)
-- [Features](#features)
-- [Technologies](#technologies)
-- [Getting Started](#getting-started)
-- [Contributing](#contributing)
-- [License](#license)
+- [Pendahuluan](#pendahuluan)
+- [Fitur](#fitur)
+- [Teknologi](#teknologi)
+- [Memulai](#memulai)
+- [Berkontribusi](#berkontribusi)
+- [Lisensi](#lisensi)
 
-## Introduction
+## Pendahuluan
 
-The cexam application is a comprehensive solution for creating, organizing, and conducting exams. It provides an intuitive and user-friendly interface for both administrators and participants, making the exam-taking experience efficient and enjoyable.
+Aplikasi cexam adalah solusi komprehensif untuk membuat, mengatur, dan menyelenggarakan ujian. Aplikasi ini menyediakan antarmuka yang intuitif dan user friendly baik untuk administrator maupun peserta, sehingga pengalaman ujian menjadi lebih efisien dan menyenangkan.
 
-## Features
+## Fitur
 
-- **User-Friendly Interface**: The frontend, developed using Next.js, ensures a smooth and engaging experience for all users, from administrators creating exams to participants taking them.
+- **Antarmuka User-Friendly**: Frontend, yang dikembangkan menggunakan Next.js, memastikan pengalaman yang mulus dan menarik bagi semua pengguna, mulai dari administrator yang membuat ujian hingga peserta yang mengikutinya.
 
-- **Efficient Backend**: Built with Go (Golang), the backend ensures high performance, security, and scalability, making it a reliable choice for handling exam-related operations.
+- **Backend Efisien**: Dibangun dengan Go (Golang), backend memastikan kinerja tinggi, keamanan, dan skalabilitas, sehingga menjadi pilihan yang dapat diandalkan untuk mengelola operasi terkait ujian.
 
-- **Exam Creation**: Administrators can easily create new exams, define questions, set time limits, and establish grading criteria.
+- **Pembuatan Ujian**: Administrator dapat dengan mudah membuat ujian baru, menentukan pertanyaan, mengatur batas waktu, dan menetapkan kriteria penilaian.
 
-- **Real-Time Monitoring**: Real-time monitoring of exam progress and participant activity, providing administrators with insights into exam dynamics.
+- **Monitoring Real-Time**: Pemantauan real-time terhadap kemajuan ujian dan aktivitas peserta, memberikan wawasan kepada administrator mengenai dinamika ujian.
 
-- **Participant Profiles**: Participants can create and access their profiles, review their exam history, and receive performance analytics.
+- **Profil Peserta**: Peserta dapat membuat dan mengakses profil mereka, meninjau riwayat ujian, dan menerima analitik kinerja.
 
-- **Authentication and Security**: Secure user authentication and authorization mechanisms are implemented to safeguard sensitive exam data.
+- **Autentikasi dan Keamanan**: Mekanisme autentikasi dan otorisasi pengguna yang aman diimplementasikan untuk melindungi data ujian yang sensitif.
 
-## Technologies
+## Teknologi
 
 - Backend: Go (Golang)
 - Frontend: Next.js
 
-## Getting Started
+## Memulai
 
-To get started with cexam, follow these steps:
+Untuk memulai menggunakan cexam, ikuti langkah-langkah berikut:
 
-1. Clone this repository: `git clone https://github.com/celpung/cexam.git`
-2. Install dependencies for the frontend: `cd web && npm install`
-3. Install dependencies for the backend: `cd ../backend && go get -d ./...`
-4. Run the backend server: `go run main.go` (or the appropriate command for your backend)
-5. Run the frontend development server: `cd web && npm run dev`
-6. Open your web browser and visit: `http://localhost:3000`
+1. Klon repositori ini: `git clone https://github.com/celpung/cexam.git`
+2. Instal dependensi frontend: `cd web && npm install`
+3. Instal dependensi backend: `cd ../backend && go get -d ./...`
+4. Jalankan server backend: `go run main.go` (atau perintah yang sesuai untuk backend Anda)
+5. Jalankan server pengembangan frontend: `cd web && npm run dev`
+6. Buka browser web Anda dan kunjungi: `http://localhost:3000`
 
-## Contributing
+## Berkontribusi
 
-Contributions are welcome and encouraged! To contribute to cexam, follow these steps:
+Kontribusi sangat diterima dan didorong! Untuk berkontribusi pada cexam, ikuti langkah-langkah berikut:
 
-1. Fork this repository
-2. Create a new branch: `git checkout -b feature-new-feature`
-3. Make your changes and commit them: `git commit -m 'Add new feature'`
-4. Push to your forked repository: `git push origin feature-new-feature`
-5. Create a pull request detailing your changes
+1. Fork repositori ini
+2. Buat cabang baru: `git checkout -b fitur-baru`
+3. Buat perubahan dan commit: `git commit -m 'Tambah fitur baru'`
+4. Push ke repositori yang telah Anda fork: `git push origin fitur-baru`
+5. Buat pull request yang menjelaskan perubahan Anda
 
-## License
+## Lisensi
 
-This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/license/mit/) file for details.
+Proyek ini dilisensikan di bawah Lisensi MIT - lihat berkas [LICENSE](https://opensource.org/licenses/MIT) untuk detail lebih lanjut.
 
 ---
 
-Feel free to explore, contribute, and use cexam to simplify the exam management process. If you encounter any issues or have suggestions, please open an issue or submit a pull request. Happy examining!
+Silakan jelajahi, berkontribusi, dan menggunakan cexam untuk menyederhanakan proses pengelolaan ujian. Jika Anda menghadapi masalah atau memiliki saran, silakan buka isu atau ajukan permintaan pull. Selamat mengelola ujian!
