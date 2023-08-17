@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import { PrimaryButtons } from "@/components/buttons";
+import { OutLinedPrimaryButton, PrimaryButtons } from "@/components/buttons";
 import { useRouter } from "next/navigation";
 
 export default function Home() {
@@ -83,7 +83,7 @@ export default function Home() {
               Hadir sebagai solusi ujian online calon polisi dengan antarmuka elegan dan fungsionalitas canggih,
               menciptakan pengalaman ujian yang lebih interaktif dan adil.{" "}
             </p>
-            
+
             <div className="text-center my-5">
               <p className="small-text font-bold text-gray-400 letter-space-2 mb-2">Layanan Kami</p>
               <p className="landing-sub letter-space-2">Pilih Simulasi Ujian</p>
@@ -103,7 +103,10 @@ export default function Home() {
 
                 <h3 className="mb-2">Huruf Hilang</h3>
                 <p className="mb-2">{truncateText(hurufDescription, 100)}</p>
-                <PrimaryButtons title="Mulai" action={() => router.push("/huruf")} />
+                <div className="grid grid-cols-2 gap-4">
+                  <PrimaryButtons title="Mulai" action={() => router.push("/huruf")} />
+                  <OutLinedPrimaryButton title="Pelajari" action={() => router.push("/huruf")} />
+                </div>
               </div>
               <div className="landing-box mb-4 md:mb-0 md:mx-2 w-full md:w-1/3 text-center p-4">
                 <div className="flex justify-center items-center mb-2">
@@ -118,7 +121,10 @@ export default function Home() {
 
                 <h3 className="mb-2">Angka Hilang</h3>
                 <p className="mb-2">{truncateText(angkaDescription, 100)}</p>
-                <PrimaryButtons title="Mulai" action={() => router.push("/angka")} />
+                <div className="grid grid-cols-2 gap-4">
+                  <PrimaryButtons title="Mulai" action={() => router.push("/angka")} />
+                  <OutLinedPrimaryButton title="Pelajari" action={() => router.push("/angka")} />
+                </div>
               </div>
 
               <div className="landing-box mb-4 md:mb-0 w-full md:w-1/3 text-center p-4">
@@ -131,10 +137,12 @@ export default function Home() {
                     style={{ height: "20%", width: "20%" }}
                   />
                 </div>
-
                 <h3 className="mb-2">Simbol Hilang</h3>
                 <p className="mb-2">{truncateText(simbolDescription, 100)}</p>
-                <PrimaryButtons title="Mulai" action={() => router.push("/simbol")} />
+                <div className="grid grid-cols-2 gap-4">
+                  <PrimaryButtons title="Mulai" action={() => router.push("/simbol")} />
+                  <OutLinedPrimaryButton title="Pelajari" action={() => router.push("/simbol")} />
+                </div>{" "}
               </div>
             </div>
           </div>
