@@ -6,14 +6,27 @@ import { useRouter } from "next/navigation";
 export default function Home() {
   const router = useRouter();
   const [activeLink, setActiveLink] = useState("home");
+  const hurufDescription =
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum reiciendis vero nesciunt incidunt amet assumenda.";
+  const angkaDescription =
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum reiciendis vero nesciunt incidunt amet assumenda.";
+  const simbolDescription =
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum reiciendis vero nesciunt incidunt amet assumenda.";
 
   const handleNavLinkClick = (link: any) => {
     setActiveLink(link);
   };
 
+  function truncateText(text: string, maxLength: number) {
+    if (text.length <= maxLength) {
+      return text;
+    }
+    return `${text.slice(0, maxLength)}...`;
+  }
+
   return (
-    <div id="home" className="h-screen flex justify-center">
-      <div className="container  h-screen">
+    <div id="home" className="home h-screen flex justify-center">
+      <div className="container h-screen">
         <div className="h-16 flex justify-between items-center">
           <Image
             src="/images/Logo.png"
@@ -63,19 +76,21 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
           <div className="md:col-span-2 p-4">
-            <p className="landing-title mb-3">Raih impian yang nyata bersama kami</p>
-            <p className="landing-desc mb-3">
+            <p className="landing-title landing-title text-center md:text-left mb-3">
+              Raih impian yang nyata bersama kami
+            </p>
+            <p className="landing-desc text-center md:text-left mb-3">
               Hadir sebagai solusi ujian online calon polisi dengan antarmuka elegan dan fungsionalitas canggih,
               menciptakan pengalaman ujian yang lebih interaktif dan adil.{" "}
             </p>
-
-            <div className="text-center my-10">
+            
+            <div className="text-center my-5">
               <p className="small-text font-bold text-gray-400 letter-space-2 mb-2">Layanan Kami</p>
               <p className="landing-sub letter-space-2">Pilih Simulasi Ujian</p>
             </div>
 
-            <div className="flex justify-center items-center">
-              <div className="landing-box mx-2 w-1/3 text-center p-4">
+            <div className="flex flex-col md:flex-row md:space-x-2">
+              <div className="landing-box mb-4 md:mb-0 w-full md:w-1/3 text-center p-4">
                 <div className="flex justify-center items-center mb-2">
                   <Image
                     src="/images/alphabet.png"
@@ -87,13 +102,10 @@ export default function Home() {
                 </div>
 
                 <h3 className="mb-2">Huruf Hilang</h3>
-                <p className="mb-2">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum reiciendis vero nesciunt incidunt amet
-                  assumenda.
-                </p>
+                <p className="mb-2">{truncateText(hurufDescription, 100)}</p>
                 <PrimaryButtons title="Mulai" action={() => router.push("/huruf")} />
               </div>
-              <div className="landing-box mx-2 w-1/3 text-center p-4">
+              <div className="landing-box mb-4 md:mb-0 md:mx-2 w-full md:w-1/3 text-center p-4">
                 <div className="flex justify-center items-center mb-2">
                   <Image
                     src="/images/math.png"
@@ -105,14 +117,11 @@ export default function Home() {
                 </div>
 
                 <h3 className="mb-2">Angka Hilang</h3>
-                <p className="mb-2">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum reiciendis vero nesciunt incidunt amet
-                  assumenda.
-                </p>
+                <p className="mb-2">{truncateText(angkaDescription, 100)}</p>
                 <PrimaryButtons title="Mulai" action={() => router.push("/angka")} />
               </div>
 
-              <div className="landing-box mx-2 w-1/3 text-center p-4">
+              <div className="landing-box mb-4 md:mb-0 w-full md:w-1/3 text-center p-4">
                 <div className="flex justify-center items-center mb-2">
                   <Image
                     src="/images/symbol.png"
@@ -124,20 +133,18 @@ export default function Home() {
                 </div>
 
                 <h3 className="mb-2">Simbol Hilang</h3>
-                <p className="mb-2">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum reiciendis vero nesciunt incidunt amet
-                  assumenda.
-                </p>
+                <p className="mb-2">{truncateText(simbolDescription, 100)}</p>
                 <PrimaryButtons title="Mulai" action={() => router.push("/simbol")} />
               </div>
             </div>
           </div>
-          <div className="flex md:col-span-1 p-4 justify-end">
+          <div className="flex md:col-span-1 p-4 justify-center md:justify-end">
             <Image
               src="/images/landing-img.png"
               alt="My Image Alt Text"
               width={300}
               height={200}
+              className="landing-img w-full h-full md:w-auto md:h-auto"
               style={{ height: "100%", width: "100%" }}
             />
           </div>
