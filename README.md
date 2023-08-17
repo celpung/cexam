@@ -1,4 +1,4 @@
-# cexam - Exam Application
+# cexam
 
 ![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)
 
@@ -43,6 +43,9 @@ To get started with cexam, follow these steps:
 1. Clone this repository: `git clone https://github.com/celpung/cexam.git`
 2. Install dependencies for the frontend: `cd web && npm install`
 3. Install dependencies for the backend: `cd ../backend && go get -d ./...`
+4. Run the backend server: `go run main.go` (or the appropriate command for your backend)
+5. Run the frontend development server: `cd web && npm run dev`
+6. Open your web browser and visit: `http://localhost:3000`
 
 ## Contributing
 
@@ -56,7 +59,7 @@ Contributions are welcome and encouraged! To contribute to cexam, follow these s
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/license/mit/) file for details.
 
 ---
 
