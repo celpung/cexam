@@ -40,7 +40,7 @@ The cexam application is a comprehensive solution for creating, organizing, and 
 
 To get started with cexam, follow these steps:
 
-1. Clone this repository: `git clone https://github.com/your-username/cexam.git`
+1. Clone this repository: `git clone https://github.com/cexam/cexam.git`
 2. Install dependencies for the frontend: `cd web && npm install`
 3. Install dependencies for the backend: `cd ../backend && go get -d ./...`
 
