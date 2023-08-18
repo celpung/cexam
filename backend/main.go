@@ -6,7 +6,8 @@ import (
 	"os"
 
 	"github.com/celpung/cexam-backend/configs"
-	"github.com/celpung/cexam-backend/routers"
+	"github.com/celpung/cexam-backend/modules/users"
+	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 )
 
@@ -17,14 +18,17 @@ func main() {
 
 	configs.ConnectDatabase()
 	if migrateErr := configs.DB.AutoMigrate(
-	// &models.User{},
+		&users.User{},
 	); migrateErr != nil {
 		panic(migrateErr)
 	}
 
-	fmt.Println("are you redy !!!")
-	r := routers.Api()
+	r := gin.Default()
+
 	r.Static("/public", "./public")
+
+	api := r.Group("/")
+	users.UserController(api)
 
 	r.Run(fmt.Sprintf(":%s", os.Getenv("PORT")))
 }
