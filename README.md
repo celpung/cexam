@@ -1,8 +1,7 @@
 # cexam
 
-### Aplikasi ini masih dalam tahap pengembangan!
+![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg) ![Static Badge](https://img.shields.io/badge/status-under_development-orange.svg)
 
-![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 Selamat datang di repositori cexam! Proyek ini dirancang untuk menyederhanakan proses pelaksanaan dan pengelolaan ujian. Proyek ini memiliki backend tangguh yang dibangun dengan Go (Golang) dan frontend dinamis yang didukung oleh Next.js.
 
