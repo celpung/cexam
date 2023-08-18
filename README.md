@@ -1,6 +1,6 @@
 # cexam
 
-![Static Badge](https://img.shields.io/badge/status-under_development-orange.svg) [![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Static Badge](https://img.shields.io/badge/NextJs-green.svg)](https://nextjs.org/) [![Static Badge](https://img.shields.io/badge/Golang-blue.svg)](https://go.dev/)
+![Static Badge](https://img.shields.io/badge/status-under_development-orange.svg) [![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Static Badge](https://img.shields.io/badge/NextJs-green.svg)](https://nextjs.org/) [![Static Badge](https://img.shields.io/badge/tailwind-purple.svg)](https://tailwindcss.com/) [![Static Badge](https://img.shields.io/badge/Golang-blue.svg)](https://go.dev/) [![Static Badge](https://img.shields.io/badge/Gin-blue.svg)](https://github.com/gin-gonic/gin) [![Static Badge](https://img.shields.io/badge/Gorm-yellow.svg)](https://gorm.io/)
 
 
 Selamat datang di repositori cexam! Proyek ini dirancang untuk menyederhanakan proses pelaksanaan dan pengelolaan ujian. Proyek ini memiliki backend tangguh yang dibangun dengan Go (Golang) dan frontend dinamis yang didukung oleh Next.js.
