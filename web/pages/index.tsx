@@ -27,16 +27,16 @@ export default function Home() {
   return (
     <div id="home" className="home h-screen flex justify-center">
       <div className="container h-screen">
-        <div className="h-16 flex justify-between items-center">
-          <Image
+        <div className="h-16 flex justify-end items-center p-4">
+          {/* <Image
             src="/images/Logo.png"
             alt="My Image Alt Text"
             width={300}
             height={200}
             style={{ height: "50%", width: "10%" }}
-          />
+          /> */}
 
-          <nav className="p-4">
+          {/* <nav className="p-4">
             <ul className="flex justify-center space-x-6">
               <li
                 className={`nav-item cursor-pointer ${activeLink === "home" ? "nav-active" : ""}`}
@@ -66,7 +66,7 @@ export default function Home() {
                 Company
               </li>
             </ul>
-          </nav>
+          </nav> */}
 
           <div className="flex justify-between gap-2 items-center">
             <PrimaryButtons title="Sign In" action={() => {}} />

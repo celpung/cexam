@@ -149,6 +149,14 @@ h6 {
   }
 }
 
+/* result */
+.point-style {
+  font-size: 120px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 81px;
+}
+
 /* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(

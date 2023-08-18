@@ -4,18 +4,20 @@ import { CountdownCircleTimer } from "react-countdown-circle-timer";
 
 interface TesKecermatanProps {
   character: string;
-  onResult: (result: number) => void;
+  onResult: (result: number, wrong: number, totalColumn: number, totalQuestion: number) => void;
 }
 
 export default function TesKecermatan({ character, onResult }: TesKecermatanProps) {
-  const delayTime = 5000;
-  const [maxKolom, setMaxKolom] = useState<number>(30); // total kolom
+  const delayTime = 5000; // waktu tunggu sebelum masuk tes
+  const maxKolom = 50; // total kolom
+  const testDuration = 60; // Durasi setiap tes dalam satu kolom (detik)
+  const questionLimit = 50; // total pertanya dalam satu kolom
+
   const [kolom, setKolom] = useState<number>(1);
-  const [testDuration, setTestDuration] = useState<number>(60); // Durasi setiap tes dalam satu kolom (detik)
   const [seconds, setSeconds] = useState<number>(testDuration);
   const [refreshKey, setRefreshKey] = useState<number>(0);
-  const [questionLimit, setQuestionLimit] = useState<number>(30); // total pertanya dalam satu kolom
   const [answeredCount, setAnsweredCount] = useState<number>(1);
+  const [wrongAnswer, setWrongAnswer] = useState<number>(0);
   const [point, setPoint] = useState<number>(0);
   const [gridValues, setGridValues] = useState<string[]>([]);
   const [missingValue, setMissingValue] = useState<string | undefined>();
@@ -43,7 +45,7 @@ export default function TesKecermatan({ character, onResult }: TesKecermatanProp
     }
 
     setGridValues(randomChars);
-    setSeconds(testDuration)
+    setSeconds(testDuration);
     setDelayInProgress(false);
   };
 
@@ -76,7 +78,7 @@ export default function TesKecermatan({ character, onResult }: TesKecermatanProp
         setSeconds(seconds - 1);
       } else {
         if (kolom === maxKolom) {
-          onResult(point);
+          onResult(point, wrongAnswer, maxKolom, questionLimit);
           clearInterval(interval);
         } else if (!delayInProgress) {
           refreshContent();
@@ -134,6 +136,8 @@ export default function TesKecermatan({ character, onResult }: TesKecermatanProp
 
     if (value === missingValue) {
       setPoint(point + 1);
+    } else {
+      setWrongAnswer(wrongAnswer + 1);
     }
     setAnsweredCount(answeredCount + 1);
     setMissingVal();
@@ -168,8 +172,8 @@ export default function TesKecermatan({ character, onResult }: TesKecermatanProp
           </div>
           <div className="grid grid-cols-2 mb-5">
             <div className="text-start">
-              <h6>Nama : Edo Raditya</h6>
-              <h6>ID Peserta : 5HF84G739</h6>
+              {/* <h6>Nama : Edo Raditya</h6>
+              <h6>ID Peserta : 5HF84G739</h6> */}
             </div>
             <div className="text-end flex justify-end items-center">
               <h5>
