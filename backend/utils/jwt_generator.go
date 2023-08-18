@@ -3,11 +3,11 @@ package utils
 import (
 	"os"
 
-	"github.com/celpung/cexam-backend/modules/users"
+	"github.com/celpung/cexam-backend/app/user/user_models"
 	"github.com/dgrijalva/jwt-go/v4"
 )
 
-func JWTGenerator(user users.User) (string, error) {
+func JWTGenerator(user user_models.User) (string, error) {
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
 		"email": user.Email,
 		"id":    user.ID,
