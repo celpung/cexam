@@ -51,7 +51,7 @@ Untuk memulai menggunakan cexam, ikuti langkah-langkah berikut:
 
 ## Berkontribusi
 
-Kontribusi sangat diterima dan didorong! Untuk berkontribusi pada cexam, ikuti langkah-langkah berikut:
+Kontribusi sangat diterima! Untuk berkontribusi pada cexam, ikuti langkah-langkah berikut:
 
 1. Fork repositori ini
 2. Buat cabang baru: `git checkout -b fitur-baru`
