@@ -1,4 +1,4 @@
-package user_models
+package models
 
 type Login struct {
 	Email    string `json:"email" binding:"required"`

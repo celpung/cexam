@@ -1,13 +1,13 @@
-package user_repo
+package repo
 
 import (
-	"github.com/celpung/cexam-backend/app/user/user_models"
+	"github.com/celpung/cexam-backend/app/user/models"
 	"github.com/celpung/cexam-backend/configs"
 	"golang.org/x/crypto/bcrypt"
 )
 
-func LoginUser(login user_models.Login) (*user_models.User, error) {
-	user := &user_models.User{}
+func LoginUser(login models.Login) (*models.User, error) {
+	user := &models.User{}
 
 	result := configs.DB.Where("email = ? AND active = ? AND email_confirmed = ?", login.Email, 1, 1).First(&user)
 	if result.Error != nil {
