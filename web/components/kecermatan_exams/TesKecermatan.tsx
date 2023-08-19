@@ -1,5 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 
 interface TesKecermatanProps {
@@ -25,7 +24,7 @@ export default function TesKecermatan({ character, onResult }: TesKecermatanProp
   const [delayInProgress, setDelayInProgress] = useState<boolean>(false);
 
   // generate random char
-  const generateRandomTestType = () => {
+  const generateRandomTestType = useCallback(() => {
     const testType =
       character == "huruf"
         ? "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -47,7 +46,7 @@ export default function TesKecermatan({ character, onResult }: TesKecermatanProp
     setGridValues(randomChars);
     setSeconds(testDuration);
     setDelayInProgress(false);
-  };
+  }, [character]);
 
   useEffect(() => {
     setDelayInProgress(true);
@@ -56,9 +55,9 @@ export default function TesKecermatan({ character, onResult }: TesKecermatanProp
 
       setDelayInProgress(false);
     }, delayTime);
-  }, []);
+  }, [generateRandomTestType]);
 
-  const refreshContent = () => {
+  const refreshContent = useCallback(() => {
     setDelayInProgress(true);
     setTimeout(() => {
       setSeconds(testDuration);
@@ -69,7 +68,7 @@ export default function TesKecermatan({ character, onResult }: TesKecermatanProp
 
       setDelayInProgress(false);
     }, delayTime);
-  };
+  }, [generateRandomTestType, kolom, refreshKey]);
 
   // counting down
   useEffect(() => {
@@ -89,7 +88,19 @@ export default function TesKecermatan({ character, onResult }: TesKecermatanProp
     return () => {
       clearInterval(interval);
     };
-  }, [seconds, kolom, maxKolom, point, onResult, testDuration, generateRandomTestType, refreshKey, delayInProgress]);
+  }, [
+    seconds,
+    kolom,
+    maxKolom,
+    point,
+    onResult,
+    testDuration,
+    generateRandomTestType,
+    refreshKey,
+    delayInProgress,
+    wrongAnswer,
+    refreshContent,
+  ]);
 
   // set missing char
   useEffect(() => {
@@ -101,7 +112,8 @@ export default function TesKecermatan({ character, onResult }: TesKecermatanProp
 
   // shuffle word first time
   useEffect(() => {
-    setShuffledWord(shuffleWord(getFilteredValues()));
+    let filteredValue = gridValues.filter((value) => value !== missingValue).join(" ");
+    setShuffledWord(shuffleWord(filteredValue));
   }, [gridValues, missingValue]);
 
   function setMissingVal() {
@@ -110,9 +122,9 @@ export default function TesKecermatan({ character, onResult }: TesKecermatanProp
   }
 
   // get filtered value (4 char)
-  const getFilteredValues = () => {
-    return gridValues.filter((value) => value !== missingValue).join(" ");
-  };
+  // const getFilteredValues = () => {
+  //   return gridValues.filter((value) => value !== missingValue).join(" ");
+  // };
 
   // shuffle the 4 char
   function shuffleWord(word: string) {

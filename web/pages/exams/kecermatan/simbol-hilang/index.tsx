@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import TesKecermatan from "@/components/TesKecermatan";
-import HasilTes from "../hasil";
-import { useRouter } from "next/router";
+import TesKecermatan from "@/components/kecermatan_exams/TesKecermatan";
+import TestResult from "../result";
 
-export default function Index() {
-  const router = useRouter();
+export default function SimbolHilang() {
   const [testCompleted, setTestCompleted] = useState(false);
   const [result, setResult] = useState({
     point: 0,
@@ -21,7 +19,7 @@ export default function Index() {
   return (
     <div>
       {testCompleted ? (
-        <HasilTes
+        <TestResult
           totalKolom={result.maxKolom}
           totalSoal={result.questionLimit}
           benar={result.point}

@@ -104,8 +104,8 @@ export default function Home() {
                 <h3 className="mb-2">Huruf Hilang</h3>
                 <p className="mb-2">{truncateText(hurufDescription, 100)}</p>
                 <div className="grid grid-cols-2 gap-4">
-                  <PrimaryButtons title="Mulai" action={() => router.push("/huruf")} />
-                  <OutLinedPrimaryButton title="Pelajari" action={() => router.push("/huruf")} />
+                  <PrimaryButtons title="Mulai" action={() => router.push("/exams/kecermatan/huruf-hilang")} />
+                  <OutLinedPrimaryButton title="Pelajari" action={() => router.push("/exams/kecermatan/huruf-hilang")} />
                 </div>
               </div>
               <div className="landing-box mb-4 md:mb-0 md:mx-2 w-full md:w-1/3 text-center p-4">
@@ -122,8 +122,8 @@ export default function Home() {
                 <h3 className="mb-2">Angka Hilang</h3>
                 <p className="mb-2">{truncateText(angkaDescription, 100)}</p>
                 <div className="grid grid-cols-2 gap-4">
-                  <PrimaryButtons title="Mulai" action={() => router.push("/angka")} />
-                  <OutLinedPrimaryButton title="Pelajari" action={() => router.push("/angka")} />
+                  <PrimaryButtons title="Mulai" action={() => router.push("/exams/kecermatan/angka-hilang")} />
+                  <OutLinedPrimaryButton title="Pelajari" action={() => router.push("/exams/kecermatan/angka-hilang")} />
                 </div>
               </div>
 
@@ -140,8 +140,8 @@ export default function Home() {
                 <h3 className="mb-2">Simbol Hilang</h3>
                 <p className="mb-2">{truncateText(simbolDescription, 100)}</p>
                 <div className="grid grid-cols-2 gap-4">
-                  <PrimaryButtons title="Mulai" action={() => router.push("/simbol")} />
-                  <OutLinedPrimaryButton title="Pelajari" action={() => router.push("/simbol")} />
+                  <PrimaryButtons title="Mulai" action={() => router.push("/exams/kecermatan/simbol-hilang")} />
+                  <OutLinedPrimaryButton title="Pelajari" action={() => router.push("/exams/kecermatan/simbol-hilang")} />
                 </div>{" "}
               </div>
             </div>

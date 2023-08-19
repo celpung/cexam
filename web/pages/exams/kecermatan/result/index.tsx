@@ -2,14 +2,14 @@ import { PrimaryButtons } from "@/components/buttons";
 import React from "react";
 import { useRouter } from "next/navigation";
 
-interface HasilTesProps {
+interface TestResultProps {
   totalKolom: number;
   totalSoal: number;
   benar: number;
   salah: number;
 }
 
-export default function HasilTes({ totalKolom, totalSoal, benar, salah }: HasilTesProps) {
+export default function TestResult({ totalKolom, totalSoal, benar, salah }: TestResultProps) {
   const router = useRouter();
   const totalQuestion = totalKolom * totalSoal;
   const answered = benar + salah;
