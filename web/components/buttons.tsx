@@ -35,7 +35,7 @@ export const OutLinedPrimaryButton = ({ title, action }: PrimaryButtonsProps) =>
 
   const outlinedButtonStyle = {
     backgroundColor: "transparent",
-    border: isHovered ? "2px solid #FF884D" : "1px solid #F60",
+    border: "1px solid #F60",
     color: isHovered ? "#FF884D" : "#F60",
     fontSize: "12px",
     fontWeight: "normal",

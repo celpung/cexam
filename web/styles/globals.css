@@ -104,6 +104,11 @@ h6 {
   font-style: normal;
   font-weight: 800;
   line-height: 81px;
+
+  @media (max-width: 768px) {
+    font-size: 30px;
+    line-height: 30px;
+  }
 }
 
 .landing-desc {
