@@ -3,10 +3,10 @@ import React from "react";
 import { useRouter } from "next/navigation";
 
 interface TestResultProps {
-  totalKolom: number;
-  totalSoal: number;
   benar: number;
   salah: number;
+  totalKolom: number;
+  totalSoal: number;
 }
 
 export default function TestResult({ totalKolom, totalSoal, benar, salah }: TestResultProps) {

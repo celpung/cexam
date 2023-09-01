@@ -7,10 +7,10 @@ interface TesKecermatanProps {
 }
 
 export default function TesKecermatan({ character, onResult }: TesKecermatanProps) {
-  const delayTime = 5000; // waktu tunggu sebelum masuk tes
-  const maxKolom = 50; // total kolom
+  const delayTime = 3000; // waktu tunggu sebelum masuk tes
+  const maxKolom = 2; // total kolom
   const testDuration = 60; // Durasi setiap tes dalam satu kolom (detik)
-  const questionLimit = 50; // total pertanya dalam satu kolom
+  const questionLimit = 2; // total pertanya dalam satu kolom
 
   const [kolom, setKolom] = useState<number>(1);
   const [seconds, setSeconds] = useState<number>(testDuration);
@@ -136,13 +136,15 @@ export default function TesKecermatan({ character, onResult }: TesKecermatanProp
     return array.join("");
   }
 
+  useEffect(() => {
+    if (kolom === maxKolom+1) {
+      onResult(point, wrongAnswer, maxKolom, questionLimit);
+    }
+  }, [kolom, onResult, point, wrongAnswer])
+
   // handle click
   const handleCellClick = (value: string) => {
     if (seconds === 0) {
-      return;
-    }
-    if (answeredCount === questionLimit) {
-      refreshContent();
       return;
     }
 
@@ -153,6 +155,11 @@ export default function TesKecermatan({ character, onResult }: TesKecermatanProp
     }
     setAnsweredCount(answeredCount + 1);
     setMissingVal();
+
+    if (answeredCount === questionLimit) {
+      refreshContent();
+    }
+
     // generateRandomTestType();
   };
 
@@ -232,6 +239,10 @@ export default function TesKecermatan({ character, onResult }: TesKecermatanProp
               </div>
             </div>
           </div>
+
+          <p>ansewer : {answeredCount}</p>
+          <p>wrong : {wrongAnswer}</p>
+          <p>poin: {point}</p>
 
           {/* enable code blow for cheat code  */}
           {/* <div className="mt-10">
