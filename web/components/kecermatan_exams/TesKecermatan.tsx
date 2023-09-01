@@ -8,9 +8,9 @@ interface TesKecermatanProps {
 
 export default function TesKecermatan({ character, onResult }: TesKecermatanProps) {
   const delayTime = 3000; // waktu tunggu sebelum masuk tes
-  const maxKolom = 2; // total kolom
+  const maxKolom = 50; // total kolom
   const testDuration = 60; // Durasi setiap tes dalam satu kolom (detik)
-  const questionLimit = 2; // total pertanya dalam satu kolom
+  const questionLimit = 50; // total pertanya dalam satu kolom
 
   const [kolom, setKolom] = useState<number>(1);
   const [seconds, setSeconds] = useState<number>(testDuration);
